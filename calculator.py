@@ -1,8 +1,15 @@
 import tkinter as tk
 
 def calculator():
-    cal = eval(b.get())
-    label.config(text=cal)
+    try:
+        cal = eval(b.get())
+        label.config(text=(f"Result: {cal:.2f}"))
+    except ValueError:
+        label.config(text="Input must be numbers or decimals")
+    except SyntaxError:
+        label.config(text="Input must be numbers or decimals")
+    except Exception:
+        label.config(text="There is some error from your input")
 
 a = tk.Tk()
 a.title("Calculator")
