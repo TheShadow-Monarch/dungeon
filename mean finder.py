@@ -12,7 +12,7 @@ def mean_is():
     except SyntaxError:
         label.config(text="Input must be numbers or decimals")
     except Exception:
-        label.config(text="There is some error in our input method or input values")
+        label.config(text="There is some error in your input method or input values")
 
 dis=tk.Tk()
 dis.title("mean finder")
