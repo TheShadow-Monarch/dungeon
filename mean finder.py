@@ -2,10 +2,17 @@ import tkinter as tk
 import numpy as np
 
 def mean_is():
-    a=entry.get()
-    b=[int(c) for c in a.split()]
-    d=np.mean(b)
-    label.config(text=f'The mean is: {d:.2f}')
+    try:
+        a=entry.get()
+        b=[float(c) for c in a.split()]
+        d=np.mean(b)
+        label.config(text=f'The mean is: {d:.2f}')
+    except ValueError:
+        label.config(text="Input must be numbers or decimals")
+    except SyntaxError:
+        label.config(text="Input must be numbers or decimals")
+    except Exception:
+        label.config(text="There is some error in our input method or input values")
 
 dis=tk.Tk()
 dis.title("mean finder")
